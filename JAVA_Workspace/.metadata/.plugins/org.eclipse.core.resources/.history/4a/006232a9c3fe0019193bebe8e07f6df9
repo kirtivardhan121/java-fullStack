@@ -1,0 +1,28 @@
+package com.ustglobal.collectionframework.list;
+
+import java.util.ArrayList;
+
+public class TestL {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Double> al = new ArrayList<Double>();
+		
+		al.add(34.5);
+		al.add(37.5);
+		al.add(38.5);
+		al.add(24.5);
+		al.add(14.5);
+		al.add(null);
+		al.add(null);
+		al.add(34.5);
+		
+		System.out.println(al);
+		
+		al.add(2, 54.6);
+		System.out.println("After 2nd Index " +al);
+		
+		al.remove(0);
+		System.out.println("After removing 0th Index " +al);
+	}
+}

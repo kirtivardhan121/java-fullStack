@@ -1,0 +1,9 @@
+package com.ustglobal.java8.predicate;
+
+public class TestE {
+
+	public static void main(String[] args) {
+		
+		
+	}
+}

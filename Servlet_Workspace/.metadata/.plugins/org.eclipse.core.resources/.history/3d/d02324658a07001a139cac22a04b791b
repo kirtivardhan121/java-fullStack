@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+		<a href="#"> Home </a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="#">Logout</a> New password : <input type="password"
+			name="new pwd"> Confirm password : <input type="password"
+			name="cnf pwd"> <input type="submit" name="change">
+	</form>
+</body>
+</html>

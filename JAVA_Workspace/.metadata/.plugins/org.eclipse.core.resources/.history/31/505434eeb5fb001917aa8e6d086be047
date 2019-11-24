@@ -1,0 +1,12 @@
+package com.ustglobal.exception.first;
+
+public class IRCTC {
+
+	public void confirm() {
+		System.out.println("IRCTC Starteed");
+		
+		System.out.println(10/0);
+		
+		System.out.println("IRCTC Ended");
+	}
+}

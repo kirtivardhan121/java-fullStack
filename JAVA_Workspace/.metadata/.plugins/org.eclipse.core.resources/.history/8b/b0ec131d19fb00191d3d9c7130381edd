@@ -1,0 +1,33 @@
+package com.ustglobal.arrays;
+
+public class TestC {
+
+	public static void main(String[] args) {
+		
+		int[] num = {10,20,30,40};
+		System.out.println(num[2]);
+//		System.out.println(num[10]);  ArrayOutOfBoundsException
+		
+		String[] name = {"Kirti" , "Raj" , "Nishu"};
+		System.out.println(name[2]);
+		
+		receive(num);
+		int[] values = getAray();
+		for(int val : values) {
+			System.out.println(val);
+		}
+	}
+	
+	static void receive(int[] numbers) {
+		
+		for(int nums : numbers) {
+			System.out.println(nums);
+		}
+	}
+	
+	static int[] getAray() {
+		int[] values = {20,30,40,50};
+		return values;
+	}
+	
+}

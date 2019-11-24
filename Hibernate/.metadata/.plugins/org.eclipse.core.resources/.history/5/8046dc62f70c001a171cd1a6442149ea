@@ -1,0 +1,8 @@
+package com.ustglobal.jpawithhibernateapp.manytoone;
+
+public class PencilBox {
+
+	private int bid;
+	private String bname;
+	
+}

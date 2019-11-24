@@ -1,0 +1,17 @@
+package com.ustglobal.sorting.set;
+
+import java.util.TreeSet;
+
+public class TestJ {
+
+	public static void main(String[] args) {
+		
+		TreeSet<Customer> ts = new TreeSet<Customer>();
+		
+		Customer c1 = new Customer("Ram", 56, 678898668);
+		Customer c2 = new Customer("Laxmana", 156, 678898668);
+		Customer c3 = new Customer("Bharat", 256, 678898668);
+		Customer c4 = new Customer("Satrighana", 66, 678898668);
+		Customer c5 = new Customer("Ravana", 10, 678898668);
+	}
+}

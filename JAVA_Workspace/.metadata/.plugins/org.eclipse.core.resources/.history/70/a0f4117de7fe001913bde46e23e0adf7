@@ -1,0 +1,19 @@
+package com.ustglobal.sorting.list;
+
+import java.util.LinkedList;
+
+public class TestE {
+
+	public static void main(String[] args) {
+
+		LinkedList<Double> l = new LinkedList<>();
+
+		l.add(22.5);
+		l.add(40.6);
+		l.add(12.9);
+		l.add(10.8);
+		l.add(80.9);
+
+	}
+
+}

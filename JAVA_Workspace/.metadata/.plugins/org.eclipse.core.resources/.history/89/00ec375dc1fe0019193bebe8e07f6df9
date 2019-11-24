@@ -1,0 +1,8 @@
+package com.ustglobal.test;
+
+public class TestB extends testA {
+
+	public void m1() {
+		
+	}
+}

@@ -1,0 +1,19 @@
+package com.ustglobal.collectionframework.list;
+
+import java.util.ArrayList;
+
+public class TestF {
+
+	public static void main(String[] args) {
+
+		ArrayList<String> al = new ArrayList<String>();
+		al.add("Anupama");
+		al.add("Arti");
+		al.add("Kavita");
+		al.add("Sunita");
+		
+		String name = al.get(0);
+		System.out.println(name);
+	}
+
+}

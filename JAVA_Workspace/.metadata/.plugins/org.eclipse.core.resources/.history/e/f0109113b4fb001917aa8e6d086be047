@@ -1,0 +1,8 @@
+package com.ustglobal.exception.first;
+
+public class PVR {
+
+	public void book() {
+		
+	}
+}

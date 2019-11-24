@@ -1,0 +1,13 @@
+package com.ustglobal.exception.customiseunchackedexception;
+
+public class InvalidAgeException extends RuntimeException {
+
+	String message = "Invalid Age";
+
+	@Override
+	public String getMessage() {
+		return super.getMessage();
+	}
+	
+	
+}

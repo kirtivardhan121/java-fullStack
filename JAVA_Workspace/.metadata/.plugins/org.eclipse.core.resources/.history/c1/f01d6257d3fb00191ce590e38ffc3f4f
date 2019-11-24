@@ -1,0 +1,14 @@
+package com.ustglobal.exception.customiseunchackedexception;
+
+public class TestAge {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Main Started");
+		
+		Validator v =new Validator();
+		v.verify(20);
+		
+		System.out.println("Main Ended");
+	}
+}

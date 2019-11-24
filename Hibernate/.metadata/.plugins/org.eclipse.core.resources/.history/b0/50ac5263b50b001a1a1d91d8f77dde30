@@ -1,0 +1,14 @@
+package com.ustglobal.movieapp;
+
+import com.ustglobal.movieapp.dto.Movie;
+
+public class InsertDemo {
+
+	public static void main(String[] args) {
+		
+		Movie movie = new Movie();
+		movie.setMid(1);
+		movie.setMname("Avengers");
+		movie.setDuration(2);
+	}
+}

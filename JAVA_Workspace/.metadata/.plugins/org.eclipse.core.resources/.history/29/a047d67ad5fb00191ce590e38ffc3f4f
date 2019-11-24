@@ -1,0 +1,5 @@
+package com.ustglobal.customized.checkedexception;
+
+public class InvalidAmountException {
+
+}

@@ -1,0 +1,31 @@
+package com.ustglobal.objectclass;
+
+public class Student {
+
+	int id;
+	String name;
+	double percentage;
+	
+	@Override
+	public int hashCode() {
+		return id;
+	}
+	
+	public Student(int id, String name, double percentage) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.percentage = percentage;
+	}
+	
+	void printDetails() {
+		System.out.println("Student name is " +name+ " id " +id+ " Percentage " +percentage);
+	}
+
+	@Override
+	public String toString() {
+		return "name is " +name+ "id " +id+ " Percentage is " +percentage;
+	}
+	
+	
+}

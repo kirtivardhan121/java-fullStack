@@ -1,0 +1,11 @@
+package com.ustglobal.arrays;
+
+public class TestD {
+
+	public static void main(String[] args) {
+		
+		Student s1 = new Student(101, "Nishu", 89.9);
+		Student s2 = new Student(102, "Nishi", 80.9);
+		Student s3 = new Student(103, "Nisha", 88.9);
+	}
+}

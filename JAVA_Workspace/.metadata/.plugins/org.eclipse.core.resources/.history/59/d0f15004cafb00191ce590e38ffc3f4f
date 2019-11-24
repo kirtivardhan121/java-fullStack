@@ -1,0 +1,21 @@
+package com.ustglobal.exception.second;
+
+import java.io.IOException;
+
+public class TestB {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Main Started");
+		
+		FileTest ft = new FileTest();
+		
+		try {
+			ft.open();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("Main Ended");
+	}
+}

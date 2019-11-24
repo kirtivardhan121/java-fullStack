@@ -1,0 +1,1143 @@
+<==========DDL(Data Definition Language) OPERATIONS:===========>
+
+1.show databases;
+to show the database which is present in mysql.
+
+2.create database db_name;
+to create database in mysql.
+
+3.use databae_name;
+to use the database.
+
+4.create table product(pid int,pname varchar(120),quantity int);
+to create a table.
+
+5.desc table_name;
+to describe the table.
+
+6.drop table table_name;
+to drop the table structure.
+
+7.drop database db_name;
+to drop the database.
+
+8.alter table table_name add column column_name datatype;
+to add or remove column from a table.
+
+9.alter table table_name change column old_colun new_column datatype;
+to change the column name in a table.
+
+10.alter table table_name drop column column_name;
+to drop the column from a table.
+
+11.rename table old_table_name to new_table_name;
+to change the table name.
+
+<========DML(Data Manipulation Language) OPERATIONS:========>
+
+1.insert into table_name(column_name1...column_namen) values (value1.....valuen);
+to insert data into the table.
+
+
+2.select * from table_name;
+to display the dable data.
+
+3.insert into table_name values(value1....valuen);
+to insert the data into column
+
+4.insert into table_name (column1,colun2) values (value1,value2);
+to insert data in specific columns.
+
+5.insert into table_name(column1,columnn) values (value1, valuen),(value1,valuen);
+to insert multiple data in table.
+
+6.update table_name set column_name = value;
+to update all the data present in a column .
+
+7.delete form table_name;
+to delete all data from a table.
+
+8.truncate table table_name;
+to delete all the data from the table but the structure remains as it is.
+
+<=========DQL(Data Query Language) Operations :=========>
+//The SQL statement used to retrieve the data from the database.
+
+1.select
+
+//with the help  of select we can perform retieval of data from table in three ways:-
+1.projection
+2.selection
+3.joins
+
+1.Projection:
+
+a.Select Coumn_name from table_name;
+to retrieve colum wise data from a table.
+
+2.selection:
+//to retrieve column as well as row wise data from a table.
+
+3.Joins:
+//to retrieve data from multiple tables.
+
+
+<======= Order Of Execution =====>
+
+Select * From Table_name where condition;
+
+1.From Clause will Execute First, it will check the table name from the database.
+2.Then where cluase will execute, it filters the column wise data on Given Condition.
+3.Then Select Clause will Execute after the where clause, it will prepare result set.
+4. * will display all the values from the table.
+
+<=======Creating Table with Data type and Constraints========>
+EMP Table:
+
+1.create table emp(eid int,name varchar(250) not null,mobilenumber int unique,dob date not null,age int,doj date,bloodGroup varchar(50),deptno int,salary int,email varchar(170),gender varchar(100), Primary key (eid));
+to create a table with data type and constraints.
+
+output:
+
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| eid          | int(11)      | NO   | PRI | NULL    |       |
+| name         | varchar(250) | NO   |     | NULL    |       |
+| mobilenumber | int(11)      | YES  | UNI | NULL    |       |
+| dob          | date         | NO   |     | NULL    |       |
+| age          | int(11)      | YES  |     | NULL    |       |
+| doj          | date         | YES  |     | NULL    |       |
+| bloodGroup   | varchar(50)  | YES  |     | NULL    |       |
+| deptno       | int(11)      | YES  |     | NULL    |       |
+| salary       | int(11)      | YES  |     | NULL    |       |
+| email        | varchar(170) | YES  |     | NULL    |       |
+| gender       | varchar(100) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+
+2. insert into emp(eid,name,mobilenumber,dob,age,doj,bloodGroup,deptno,salary,email,gender,designation) values (110,'Aishwarya',468749874,'1996-11-05',23,'2018-09-12','O+',40,26000,'aish@gmail.com','Female','TechSupport');
+//to insert data in table.
+
+output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | Opositive  |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | Onegative  |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | Apositive  |     20 |  30000 | raj@gmail.com     | male   | Testing     |
+| 103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | Bpositive  |     20 |  20000 | abhi@gmail.com    | male   | Testing     |
+| 104 | Sumit     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | Opositive  |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 105 | Swarna    |     46444760 | 1997-06-13 |   22 | 2018-06-16 | AB+        |     40 |  15000 | swarna@gmail.com  | female | TechSupport |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 109 | Rahul     |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+<================ distict ==============>
+
+-> the select distinct statement is used to return only distict (unique) value.
+
+Syntax:- select distinct from table_name;
+
+1:- select distinct designation from emp;
+output:-
++-------------+
+| designation |
++-------------+
+| Developer   |
+| Testing     |
+| Manager     |
+| TechSupport |
++-------------+
+
+2:-  select distinct designation,deptno from emp;
+output:- 
++-------------+--------+
+| designation | deptno |
++-------------+--------+
+| Developer   |     10 |
+| Testing     |     20 |
+| Manager     |     30 |
+| TechSupport |     40 |
++-------------+--------+
+
+<================ Alias ==============>
+
+->SQL Aliases are used to give a table_name , Column_name, a temporary name.
+->Aliases are often used to make column names more readable.
+
+Syntax:- select column_name from table_name AS alias_name;
+
+1:- select bloodGroup as bldgrp from emp;
+output:- 
++-----------+
+| bldgrp    |
++-----------+
+| Opositive |
+| Onegative |
+| Apositive |
+| Bpositive |
+| Opositive |
+| AB+       |
+| AB-       |
+| O+        |
+| A+        |
+| A+        |
+| O+        |
++-----------+
+
+<=============== WHERE Clause ==============>
+
+-> The where clause is used to filter records.
+-> the where clause is used to extract only those record which is needed.
+
+syntax:- select * From table_name WHERE colun_name=value; (Condition) 
+
+1:-  update emp set bloodGroup = 'B+' where eid = 100;
+output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | Onegative  |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | Apositive  |     20 |  30000 | raj@gmail.com     | male   | Testing     |
+| 103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | Bpositive  |     20 |  20000 | abhi@gmail.com    | male   | Testing     |
+| 104 | Sumit     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | Opositive  |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 105 | Swarna    |     46444760 | 1997-06-13 |   22 | 2018-06-16 | AB+        |     40 |  15000 | swarna@gmail.com  | female | TechSupport |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 109 | Rahul     |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+2:- delete from emp where eid = 105;
+output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com     | male   | Testing     |
+| 103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com    | male   | Testing     |
+| 104 | Sumit     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 109 | Rahul     |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+3:-  select * from emp where eid = 100;
+output:- 
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name    | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+
+<============== Expression ===============>
+
+-> Combination of operators and operands, it is of two types
+-> 1. Literals and 2. colummn_name
+-> Literals are the actual value which we passed to the operators, it is of three types
+1. Number
+2. Character
+3. Date
+
+
+
+<==============Operators ================>
+
+<-------------- Arithmetic Operators ----------------->
+
+Q:-write a query to display the salary of the employee that is increamented by 5000.
+ 
+query : -  select salary + 5000 increament from emp;
+output :-  
++------------+
+| increament |
++------------+
+|      35000 |
+|      35000 |
+|      35000 |
+|      25000 |
+|     305000 |
+|      25000 |
+|      35000 |
+|      35000 |
+|      25000 |
+|      31000 |
++------------+
+
+Q:- write a query to display the salary of the employee that is decreamented by 5000. 
+query : -  select salary - 5000 increament from emp;
+output : -
++------------+
+| increament |
++------------+
+|      25000 |
+|      25000 |
+|      25000 |
+|      15000 |
+|     295000 |
+|      15000 |
+|      25000 |
+|      25000 |
+|      15000 |
+|      21000 |
++------------+
+
+
+Q: - Write a query to display anual salary 
+query :-  select salary * 12 annual from emp;
+output: -
++---------+
+| annual  |
++---------+
+|  360000 |
+|  360000 |
+|  360000 |
+|  240000 |
+| 3600000 |
+|  240000 |
+|  360000 |
+|  360000 |
+|  240000 |
+|  312000 |
++---------+
+
+
+Q:- Write a query to display day wise salary
+query : - select salary / 30 per_day from emp;
+output: - 
++------------+
+| per_day    |
++------------+
+|  1000.0000 |
+|  1000.0000 |
+|  1000.0000 |
+|   666.6667 |
+| 10000.0000 |
+|   666.6667 |
+|  1000.0000 |
+|  1000.0000 |
+|   666.6667 |
+|   866.6667 |
++------------+
+
+
+Q:- Write a query to display the result from the emp table whose job designation is software developer.
+query:- select name from emp where designation = 'developer';
+output:-
++---------+
+| name    |
++---------+
+| Vardhan |
+| Kirti   |
+| Nisha   |
+| Aman    |
++---------+
+
+<------------- Relational Operators -------------->
+
+Q:- Write a query to display all the record of the employee excluding who is working in deptno 20.
+query:- select * from emp where deptno <> 20;
+output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 104 | Sumit     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+Q:- write a query to display the record of employee whose salary is greater than 25000.
+query:-select * from emp where salary > 25000;
+output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com     | male   | Testing     |
+| 104 | Sumit     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+Q:- Write a query to display record of employee whose age is less than 22.
+query:-select * from emp where age < 22;
+output:-
++-----+-------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| eid | name  | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email           | gender | designation |
++-----+-------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| 107 | Nisha |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com | female | Developer   |
++-----+-------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+
+
+Q:- Write a query to display name salary, email, mobile nuber whose age is equal to 21 and greater than 21.
+query:- select name,salary, mobilenumber,email from emp where age >=21;
+output:-
++-----------+--------+--------------+-------------------+
+| name      | salary | mobilenumber | email             |
++-----------+--------+--------------+-------------------+
+| Vardhan   |  30000 |      4644412 | vardhan@gmail.com |
+| Kirti     |  30000 |      4644413 | kirti@gmail.com   |
+| Raj       |  30000 |      4644414 | raj@gmail.com     |
+| Abhishek  |  20000 |      4644484 | abhi@gmail.com    |
+| Sumit     | 300000 |      4644430 | sumit@gmail.com   |
+| Anshika   |  20000 |    464447630 | anshika@gmail.com |
+| Nisha     |  30000 |     46444734 | nisha@gmail.com   |
+| Aman      |  30000 |     46874734 | aman@gmail.com    |
+| Rahul     |  20000 |     46874934 | rahul@gmail.com   |
+| Aishwarya |  26000 |    468749874 | aish@gmail.com    |
++-----------+--------+--------------+-------------------+
+
+
+Q:- Write a query to display name salary, email, mobile nuber whose age is equal to 21 and less than 21.
+query:-select name,salary, mobilenumber,email from emp where age <=21;
+output:-
++-------+--------+--------------+-----------------+
+| name  | salary | mobilenumber | email           |
++-------+--------+--------------+-----------------+
+| Nisha |  30000 |     46444734 | nisha@gmail.com |
++-------+--------+--------------+-----------------+
+
+<--------------- Logical Operators ------------>
+
+1. AND- Both Conditions should be true to get result as true.
+Syntax:- Select * from table_name where condition_1 AND condition_2.
+
+2.OR- Either one Condition should be true to get true as result.
+Syntax:- Select * from table_name where condition_1 OR condition_2.
+ 
+3.NOT- It takes only one input and gives opposite output.
+Syntax:- Select * from table_name where condition_1 NOT condition_2.
+
+
+Q:- Write a query to display all the employee details who is working in department no 20 as well as salary is greater than 25k.
+Query:- select * from emp where deptno = 20 AND salary > 25000;
+output:-
++-----+------+--------------+------------+------+------------+------------+--------+--------+---------------+--------+-------------+
+| eid | name | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email         | gender | designation |
++-----+------+--------------+------------+------+------------+------------+--------+--------+---------------+--------+-------------+
+| 102 | Raj  |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com | male   | Testing     |
++-----+------+--------------+------------+------+------------+------------+--------+--------+---------------+--------+-------------+
+
+Q:- Write a query to display name and salary from the employee table who is working in department no 10 and 20.
+Query:-  select name , salary from emp where deptno=10 AND deptno = 20;
+output:- EMPTY SET.
+
+
+Q:- Write a query to display employee detail whose job designation is tester and age is less than 25.
+Query:- select * from emp where designation = 'Testing' and age < 25;
+Output:-
+
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| eid | name     | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email           | gender | designation |
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| 102 | Raj      |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com   | male   | Testing     |
+| 103 | Abhishek |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com  | male   | Testing     |
+| 109 | Rahul    |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com | male   | Testing     |
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+
+
+Q:- Write aa query to display all the record of an employee who is working as tester or having salary is equal to 40000.
+Query:- select * from emp where designation = 'Testing' or salary =40000;
+Output:-
+
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| eid | name     | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email           | gender | designation |
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| 102 | Raj      |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com   | male   | Testing     |
+| 103 | Abhishek |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com  | male   | Testing     |
+| 109 | Rahul    |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com | male   | Testing     |
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+
+
+Q:- Write a query to display name salary age from emp table who is working in departent 10 or 40 or 50.
+Query:- select name , age, salary from emp where deptno = 10 or deptno = 40 or deptno= 50;
+Output :- 
++-----------+------+--------+
+| name      | age  | salary |
++-----------+------+--------+
+| Vardhan   |   22 |  30000 |
+| Kirti     |   22 |  30000 |
+| Anshika   |   23 |  20000 |
+| Nisha     |   21 |  30000 |
+| Aman      |   23 |  30000 |
+| Aishwarya |   23 |  26000 |
++-----------+------+--------+
+
+Q:- Write a query to display  employee detail whose age is more than 20 and bloodgroup is B+.
+Query:- select * from emp where age > 20 AND bloodGroup = 'B+';
+Output :- 
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name    | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+ 
+
+
+Q:- Write a query to display all records of the employee excluding tester.
+Query:-  select * from emp where not  designation = 'Testing';
+or
+	select * from emp where  designation != 'Testing';
+Output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 104 | Sumit     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+Q:- Write a query to display name of all the employee who is working as hr or tester and salary is greater than 40000.
+Query:- select name from emp where designation = 'Testing' or designation = 'Hr' And salary > 40000;
+Output:- 
++----------+
+| name     |
++----------+
+| Raj      |
+| Abhishek |
+| Rahul    |
++----------+
+
+
+Q:- Write a query to display all the employee excluding developer who are working in department no 40.
+Query:- select * from emp where not designation='Developer' And deptno = 40;
+Output:- 
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+Order of execution of logical opertor
+-> first NOT will executte then AND then OR.
+
+
+Q:- Write a query to display all the developer who are forking in departmnet no 10 or 40.
+Query:-  select * from emp where designation = 'Developer' and  (deptno= 10 OR deptno= 40 );
+output:-
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name    | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti   |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 107 | Nisha   |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman    |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+<================== Special Operators ==================>
+
+-> 1.IN Operator :- It Acts as OR Operator, it is used to evaluate multiple values.
+Syntax: - Select * from table_name where column_name IN(list of values);
+
+Q:- Write a query to display all the details of employee who are working in (40,50,70,10).
+Query:- select * from emp where deptno in(40,50,70,10);
+Output:-
+
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+Q:- Write a query to display name of all the employees who are working as tester hr and developer.
+Query:- select name from emp where designation IN('Developer','Hr','Testing');
+Output:- 
++----------+
+| name     |
++----------+
+| Vardhan  |
+| Kirti    |
+| Raj      |
+| Abhishek |
+| Nisha    |
+| Aman     |
+| Rahul    |
++----------+
+
+Q:- Write a query to get details of tester admin developer who are working in department no 20 or 30 and salary is greater than 20k.
+Query:-  select * From emp where designation in('Testing','Hr','Admin') and deptno in(20,30) and salary > 20000;
+Output:-
++-----+------+--------------+------------+------+------------+------------+--------+--------+---------------+--------+-------------+
+| eid | name | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email         | gender | designation |
++-----+------+--------------+------------+------+------------+------------+--------+--------+---------------+--------+-------------+
+| 102 | Raj  |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com | male   | Testing     |
++-----+------+--------------+------------+------+------------+------------+--------+--------+---------------+--------+-------------+
+
+
+-> 2. NOTIN Operator :-  it is used to exclude multiple values.
+Syntax:- Select * From table_name where NOTIN (list of values);
+
+
+Q:- Write a query to display All the record of eployee excluding who is working as tester admin and hr.
+Query:-select * from emp where designation NOT IN('Testing','Hr','Admin');
+Output:-
+
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 104 | Sumit     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+'
+
+Q:- WAQTD all the employee data whose age is 20, 25, 30 exclude all the details of tester and developer
+Query:-  select * From emp where age IN(20, 30, 25) and designation NOT IN('Testing','Developer');
+Output:-
++-----+-------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| eid | name  | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email           | gender | designation |
++-----+-------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| 104 | Sumit |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com | male   | Manager     |
++-----+-------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+
+
+
+-> 3. BETWEEN Operator : - it is used for searching based on range of values.
+Syntax:- Select * From table_name where Column_name Between value1 And value2;
+
+
+Q:- write a query to display all the detail of employee whose age is between 20 and 40.
+Query:- select * from emp where age BETWEEN 20 AND 40;
+Output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com     | male   | Testing     |
+| 103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com    | male   | Testing     |
+| 104 | Sumit     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 109 | Rahul     |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+Q:- write a query to display all the detail of employee who are hired during 2018.
+Query:-   select * from emp where doj BETWEEN '2018-01-01' and '2018-12-31';
+Output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+Q:- write a query to display all the detail of employee excluding whse salary is in range 25k to 30k.
+Query:- select * from emp where salary NOT BETWEEN 25000 and 40000;
+Output:- 
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name     | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 103 | Abhishek |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com    | male   | Testing     |
+| 104 | Sumit    |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 106 | Anshika  |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 109 | Rahul    |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+
+
+-> 4. IS Operator :- Check the null value from the table.
+Syntax :- Select * from table_name where column_name IS null;
+
+-> IS NOT Operator : - Check the not null value from the table.
+Syntax:- Select * from table_name where columne_name IS NOT null;
+
+-> LIKE Operator :- Used for pattern matching.
+	-> '%' (percentage) :- to check 0 or n values.
+	-> '_' (Underscore) :- to check single value.
+	Syntax:- Select * From table_name where column_name LIKE '% / _';
+
+
+ 
+Q:- Write a query to display all the details of employee whose name strats with A.
+Query :- select * from emp where name like 'A%';
+Output:- 
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com    | male   | Testing     |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+Q:- Write a query to display  eployee data whose second character is 'I'.
+Query:- select * from emp where name like '_i%';
+Output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email           | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com | male   | Developer   |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com | female | Developer   |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com  | Female | TechSupport |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-----------------+--------+-------------+
+
+
+
+Q:- Write a query to display the name of the employee which has atleast two 'L' in their name.
+Query:- select name from emp where name like '%a%a%';
+Output:- 
++-----------+
+| name      |
++-----------+
+| Vardhan   |
+| Anshika   |
+| Aman      |
+| Aishwarya |
++-----------+
+
+
+Q:- Write a query to display the name of the employee whose name strat with a and end with k.
+Query:-  select name from emp where name LIKE 'A%k';
+Output:-
++----------+
+| name     |
++----------+
+| Abhishek |
++----------+
+
+
+Q:- Write a query to display the name of the employee if the namme begins with A and S.
+Query:-select name from emp where name LIKE 'A%' or name like 'S%';
+Output:-
++-----------+
+| name      |
++-----------+
+| Abhishek  |
+| Sumit     |
+| Anshika   |
+| Aman      |
+| Aishwarya |
++-----------+
+
+
+Q:- Write a query to display the name of the employee and salary who is working in department no 10,20,30 and job designation strats with 'D'.
+Query:-select name, salary from emp where deptno IN(10,20,30) and designation LIKE 'D%';
+output:-
++---------+--------+
+| name    | salary |
++---------+--------+
+| Vardhan |  30000 |
+| Kirti   |  30000 |
+| Nisha   |  30000 |
+| Aman    |  30000 |
++---------+--------+
+
+<=========================== Functions ======================================>
+
+-> Set of instructions to perform some specific task.
+-> For doing operations on data SQL has many builtin functions.
+
+	1-> SingleRow Function (Scalar Function) :- For every single input we will get  output.
+	2-> MultiRow Fuction (Aggregate Function) :- For n inputs we will get single output.
+	
+	2.a-> AVG()- Returns average value.
+
+Q:- Calculate sum of salries from table
+Query:select sum(salary) as total from emp;
+Output:-
++--------+
+| total  |
++--------+
+| 536000 |
++--------+
+
+	2.b-> Count()- It counts the no of rows.
+
+Q:-Count the no of entries in the table.
+Query:- select Count(*) as total from emp;
+Output:-
++-------+
+| total |
++-------+
+|    10 |
++-------+
+
+	2.c-> MAX()- Returns maxium value from selected column.
+
+Q:- Calculate the maximum Salary from the table.
+Query:- select Max(salary) as max from emp;
+Output:-
++--------+
+| max    |
++--------+
+| 300000 |
++--------+
+
+	2.d-> MIN()- Returns minimum value from selected colun.
+
+Q:- Calculate the maximum Salary from the table.
+Query:- select Min(salary) as max from emp;
+Output:-
++-------+
+| min   |
++-------+
+| 20000 |
++-------+
+
+
+	2.e-> SUM()- Returns sum of all the values of selected column.
+
+
+Q:- Calculate the sum of Salary from the table.	
+Query:- select sum(salary) as sum from emp;
+Output:-
++--------+
+| sum    |
++--------+
+| 536000 |
++--------+	 
+
+<========================= Order By Clause ====================>
+
+-> Order By keyword is used to sort some records in ascending or descending order.
+-> Order By cluse Execute at last, and we should write Order by Clause at the last.
+	->Syntax:- Select column1, column2 from table_name ORDER BY ASC|DESC;
+
+Q:- Write a query to all the records of the employee and salary should be in descending order.
+Query:- Select * From emp ORDER BY salary DESC;
+Output:-
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 104 | Sumit     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com     | male   | Testing     |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  26000 | aish@gmail.com    | Female | TechSupport |
+| 103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com    | male   | Testing     |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |
+| 109 | Rahul     |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+<======================= GROUP BY CLAUSE ===============>
+
+-> Syntax:- select count(*) from table_name where condition groupby colun_name;
+-> first from will execute then where clause will execute then groupby clause will execute then count and then select will prepare the result set.
+
+Q:- Write a query to display the maximum salary for each department.
+Query:- select max(salary) from emp group by deptno;
+Output:-
++-------------+
+| max(salary) |
++-------------+
+|       30000 |
+|       30000 |
+|      300000 |
+|       26000 |
++-------------+
+
+Q:- Write a query to display the heighest salary given to tester for each department.
+Query:- select max(salary) from emp where designation = 'Testing' group by deptno;
+Output:-
++-------------+
+| max(salary) |
++-------------+
+|       30000 |
++-------------+
+
+<===================== HAVING CLAUSE ===================>
+
+-> Always having clause will execute after GROUP BY clause.
+-> Having clause prepare the result given by Group by clause.
+-> We can not pass multiple column in having clause.
+-> Syntax:- Select * from table_name where condition group by column_name having condition;
+
+
+Q:- Write a query to display department no which has atleast 2 employee is working.
+Query:- select deptno from emp group by deptno having count(*) >= 2;
+Output:-
++--------+
+| deptno |
++--------+
+|     10 |
+|     20 |
+|     40 |
++--------+
+
+<====================== SUB QUERY =======================>
+
+-> Query inside a query is known as sub-query.
+-> Inner Query will Execute first and then outer query will execute.
+-> When we do not know the exact value which is passing in where condition then we write subquery.
+
+1-> Singlerow subquery:- we will get only single value after executing inner query.
+->Syntax:- Select * from table_name where coolumn condition operator(=,<,>)(select * from table_name);
+
+2-> Multirow Subquery:- we will get multiple value after executing inner query. 
+->Syntax:- Select * from table_name where condition operator(IN,ANY,ALL)(Select * from table_name);
+
+Q:- create a department table with deptname deptno and location and make deptno as primary key.
+Query:- create table department(deptno int,deptname varchar(170),location varchar(150),primary key(deptno));
+
+Q:- Write a query to get all the record of the emplyee whose date of joining is same as kirti.
+Query:- select * from emp where doj = (select doj from emp where name = 'kirti');
+Output:-
+
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name    | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti   |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 102 | Raj     |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com     | male   | Testing     |
++-----+---------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+Q:- Write a query to display the second maximum salary.
+Query:- select max(salary) from emp where salary < (Select max(salary) from emp);
+Output:-
++-------------+
+| max(salary) |
++-------------+
+|       30000 |
++-------------+
+
+
+Q:- Write a query to display name of the employee who is working in a location which has atleast one A in the location.
+Query:- select name  from emp where deptno IN (select deptno from department where location like '%a%');
+Output:- 
++-----------+
+| name      |
++-----------+
+| Vardhan   |
+| Kirti     |
+| Raj       |
+| Abhishek  |
+| Sumit     |
+| Anshika   |
+| Nisha     |
+| Aman      |
+| Rahul     |
+| Aishwarya |
++-----------+
+
+Q:-Write a query to display all the records of the employee who is working in admin , developer , tester.
+Query:- select * from emp where deptno IN (select deptno from department where deptname IN ('admin','developer','testing'));
+Output:-
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| eid | name     | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation |
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+| 100 | Vardhan  |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |
+| 101 | Kirti    |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |
+| 102 | Raj      |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  30000 | raj@gmail.com     | male   | Testing     |
+| 103 | Abhishek |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com    | male   | Testing     |
+| 107 | Nisha    |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |
+| 108 | Aman     |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |
+| 109 | Rahul    |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |
++-----+----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+
+
+
+
+<================================= JOINS ==============================================================>
+
+-> Establishing connection between multiple tables.
+-> 
+-> Cross Joins:- Record from the first table will be merge with the second table.
+	-> Syntax :- Select * from table_name1 cross join table_name2. (ANSI)
+	-> Syntax :- Select * from table_name1,table_name2. (ORACLE)
+
+Q:- Write a query to join emp table with department table with the help of cross join.
+Query:- select * from emp cross join department;
+
+
+-> INNER JOIN:- Inner join is used to retreive only matching record from the tables.
+	-> Syntax:- Select * from table_name1 INNER JOIN table_name2 on Condition.(ANSI)
+	-> Syntax:- Select * from table_name1,table_name2 where <join condition>.(ORACLE)
+
+
+Q:- Write a query to retrieve matching record from tables emp and department.
+Query:- select * from emp e inner join department d on e.deptno=d.deptno;
+Output:-
+
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+--------+-------------+-----------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation | deptno | deptname    | location  |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+--------+-------------+-----------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |     10 | Developer   | Bangalore |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |     10 | Developer   | Bangalore |
+| 102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  50000 | raj@gmail.com     | male   | Testing     |     20 | Testing     | Mumbai    |
+| 103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com    | male   | Testing     |     20 | Testing     | Mumbai    |
+| 104 | Utsaw     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |     30 | Manager     | Bangalore |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |     40 | TechSupport | Pune      |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |     10 | Developer   | Bangalore |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |     10 | Developer   | Bangalore |
+| 109 | Rahul     |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |     20 | Testing     | Mumbai    |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  40000 | aish@gmail.com    | Female | TechSupport |     40 | TechSupport | Pune      |
+| 111 | vidya     |   2147483647 | 1990-10-10 |   30 | 2010-09-12 | O+         |     60 |  33000 | vidya@gmail.com   | Female | Admin       |     60 | Admin       | Delhi     |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+--------+-------------+-----------+
+
+
+-> OUTER JOIN:- 
+	1. LEFT OUTER JOIN :- join return all the rows of the table on the left side of the join and matching rows for the table on the right side of join.
+			    - It is cobination of inner join and unmatched records in the left table.
+	Syntax:- Select * from table_name1 LEFT OUTER JOIN table_name on condition;(ANSI)
+	Syntax:- Select * from table1 t1,table2 t2 where  t1.column_name=t2.column_name.(ORACLE)
+
+
+EX:- select * from emp t1 left outer join department t2 on t1.deptno=t2.deptno;
+Output :- 
+
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+--------+-------------+-----------+
+| eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation | deptno | deptname    | location  |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+--------+-------------+-----------+
+| 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |     10 | Developer   | Bangalore |
+| 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |     10 | Developer   | Bangalore |
+| 102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  50000 | raj@gmail.com     | male   | Testing     |     20 | Testing     | Mumbai    |
+| 103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com    | male   | Testing     |     20 | Testing     | Mumbai    |
+| 104 | Utsaw     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |     30 | Manager     | Bangalore |
+| 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |     40 | TechSupport | Pune      |
+| 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |     10 | Developer   | Bangalore |
+| 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |     10 | Developer   | Bangalore |
+| 109 | Rahul     |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |     20 | Testing     | Mumbai    |
+| 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  40000 | aish@gmail.com    | Female | TechSupport |     40 | TechSupport | Pune      |
+| 111 | vidya     |   2147483647 | 1990-10-10 |   30 | 2010-09-12 | O+         |     60 |  33000 | vidya@gmail.com   | Female | Admin       |     60 | Admin       | Delhi     |
++-----+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+--------+-------------+-----------+
+
+
+	2. RIGHT OUTER JOIN :- It is the combination of inner join and unmatched records in the right table.
+	Syntax:- Select * from table_name1 Right OUTER JOIN table_name on condition;(ANSI)
+	Syntax:- Select * from table1 t1,table2 t2 where  t1.(column_name)=t2.(column_name).(ORACLE)
+
+EX:-  select * from emp t1 right outer join department t2 on t1.deptno=t2.deptno;
+Output:- 
+
++------+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+--------+--------------+-----------+
+| eid  | name      | mobilenumber | dob        | age  | doj        | bloodGroup | deptno | salary | email             | gender | designation | deptno | deptname     | location  |
++------+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+--------+--------------+-----------+
+|  100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |     10 |  30000 | vardhan@gmail.com | male   | Developer   |     10 | Developer    | Bangalore |
+|  101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |     10 |  30000 | kirti@gmail.com   | male   | Developer   |     10 | Developer    | Bangalore |
+|  102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |     20 |  50000 | raj@gmail.com     | male   | Testing     |     20 | Testing      | Mumbai    |
+|  103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |     20 |  20000 | abhi@gmail.com    | male   | Testing     |     20 | Testing      | Mumbai    |
+|  104 | Utsaw     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         |     30 | 300000 | sumit@gmail.com   | male   | Manager     |     30 | Manager      | Bangalore |
+|  106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |     40 |  20000 | anshika@gmail.com | female | TechSupport |     40 | TechSupport  | Pune      |
+|  107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |     10 |  30000 | nisha@gmail.com   | female | Developer   |     10 | Developer    | Bangalore |
+|  108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |     10 |  30000 | aman@gmail.com    | male   | Developer   |     10 | Developer    | Bangalore |
+|  109 | Rahul     |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |     20 |  20000 | rahul@gmail.com   | male   | Testing     |     20 | Testing      | Mumbai    |
+|  110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |     40 |  40000 | aish@gmail.com    | Female | TechSupport |     40 | TechSupport  | Pune      |
+|  111 | vidya     |   2147483647 | 1990-10-10 |   30 | 2010-09-12 | O+         |     60 |  33000 | vidya@gmail.com   | Female | Admin       |     60 | Admin        | Delhi     |
+| NULL | NULL      |         NULL | NULL       | NULL | NULL       | NULL       |   NULL |   NULL | NULL              | NULL   | NULL        |     50 | Maintainence | Bangalore |
++------+-----------+--------------+------------+------+------------+------------+--------+--------+-------------------+--------+-------------+--------+--------------+-----------+
+
+
+
+	3. FULL OUTER JOIN :- It retrieve unmatched record from both the tables.
+	Syntax:-
+
+
+-> NATURAL JOIN:- Natural join is similar to inner join but we dont need to specify the join condition.
+Syntax:- Select * from table_name1 INNER JOIN table_name2.
+
+
+EX:- > select * from emp natural join department;
+Output:-
++--------+-----+-----------+--------------+------------+------+------------+------------+--------+-------------------+--------+-------------+-------------+-----------+
+| deptno | eid | name      | mobilenumber | dob        | age  | doj        | bloodGroup | salary | email             | gender | designation | deptname    | location  |
++--------+-----+-----------+--------------+------------+------+------------+------------+--------+-------------------+--------+-------------+-------------+-----------+
+|     10 | 100 | Vardhan   |      4644412 | 1997-06-13 |   22 | 2019-06-16 | B+         |  30000 | vardhan@gmail.com | male   | Developer   | Developer   | Bangalore |
+|     10 | 101 | Kirti     |      4644413 | 1997-08-31 |   22 | 2019-06-16 | B-         |  30000 | kirti@gmail.com   | male   | Developer   | Developer   | Bangalore |
+|     20 | 102 | Raj       |      4644414 | 1998-06-13 |   22 | 2019-06-16 | A+         |  50000 | raj@gmail.com     | male   | Testing     | Testing     | Mumbai    |
+|     20 | 103 | Abhishek  |      4644484 | 1998-01-17 |   22 | 2019-07-16 | AB+        |  20000 | abhi@gmail.com    | male   | Testing     | Testing     | Mumbai    |
+|     30 | 104 | Utsaw     |      4644430 | 1990-06-13 |   30 | 2012-06-16 | O+         | 300000 | sumit@gmail.com   | male   | Manager     | Manager     | Bangalore |
+|     40 | 106 | Anshika   |    464447630 | 1996-06-13 |   23 | 2018-10-16 | AB-        |  20000 | anshika@gmail.com | female | TechSupport | TechSupport | Pune      |
+|     10 | 107 | Nisha     |     46444734 | 1998-06-05 |   21 | 2018-12-16 | O+         |  30000 | nisha@gmail.com   | female | Developer   | Developer   | Bangalore |
+|     10 | 108 | Aman      |     46874734 | 1996-06-05 |   23 | 2018-01-16 | A+         |  30000 | aman@gmail.com    | male   | Developer   | Developer   | Bangalore |
+|     20 | 109 | Rahul     |     46874934 | 1996-06-05 |   23 | 2019-01-16 | A+         |  20000 | rahul@gmail.com   | male   | Testing     | Testing     | Mumbai    |
+|     40 | 110 | Aishwarya |    468749874 | 1996-11-05 |   23 | 2018-09-12 | O+         |  40000 | aish@gmail.com    | Female | TechSupport | TechSupport | Pune      |
+|     60 | 111 | vidya     |   2147483647 | 1990-10-10 |   30 | 2010-09-12 | O+         |  33000 | vidya@gmail.com   | Female | Admin       | Admin       | Delhi     |
++--------+-----+-----------+--------------+------------+------+------------+------------+--------+-------------------+--------+-------------+-------------+-----------+
+
+
+-> SELF JOIN:- Joining Of two same table is known as self join, we use this join whenever the data to be selected within the same table but it is present in two different record.
+Syntax:- Select * from table_name1 t1 join table_name2 t2 on condition;(ANSI)
+Syntax:- Select * from table t1 table2 t2 where condition;(ORACLE)
+
+
+<================================== KEY ATTRIBUTE =================================================>
+
+-> The attribute withe the help of wich we can identify the record uniquely.
+-> ALL the attributes except key attribute is know as non key attribute.
+-> Prime key attribute:- among the key attributes and attributes we choosen to uniquely adentify a table.
+-> Non Prime Key:- All the keys except the prime key is known as non prime key.
+-> Composite key:- The cobination of two our ore key attributes which is used to identify a record uniquely is called as composite key.
+-> Foreign Key:- Used the establish connection between multiple tables.
+-> Super Key:- The set of all key attributes is known as super key.
+
+<================================== Functional Dependencies ========================================>
+
+-> A relation wich exist such that an attribute determine another attribute uniquely is known as functional dependncies.
+
+1. TOTAL FUCNTIONAL Dependencies:- If all the attributes of a relation determine by a key attribute that is known as total functional dependencies.
+
+2. PARTIAL FUCNTIONAL Dependencies:- A relation is said to have partial functional dependencies
+					1. if it consits of composite key attribute.
+					2. their exits a dependecy such that an attribute can be determined by another attribute which is part of composite key.
+
+3. TRANSITIVE FUCNTIONAL Dependencies:- A relation is said to have transitive functional dependency if their exist a relation such that an attribute is determined by non key attribute which internally determined by key attribute.
+
+
+<=================================== NORMALISATION ==================================================>
+
+-> The process of decomposing the table into smaller table inorder to remove redundency and anamoly while identifying dependency
+-> The process of reducing a table into normal form is known as normalisation.
+
+
+<----------------------------------- NORMAL FORMS --------------------------------------------------->
+
+-> A state of table without redundency and anamoly is called normal forms.
+-> Anamoly :- The problems getting while performing dml operation.
+
+1. FIRST NORMAL Form(1 NF) :- A table is called 1st no
+
+
+
+
+
+
+
+
+
+

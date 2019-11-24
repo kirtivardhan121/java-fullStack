@@ -1,0 +1,33 @@
+package com.ustglobal.sorting.list;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class TestF {
+
+	public static void main(String[] args) {
+		
+		LinkedList<Pen> l = new LinkedList<Pen>();
+
+		Pen p1 = new Pen(20, "Red");
+		Pen p2 = new Pen(10, "Black");
+		Pen p3 = new Pen(7,  "Green");
+		Pen p4 = new Pen(50, "Yellow");
+
+		l.add(p1);
+		l.add(p2);
+		l.add(p3);
+		l.add(p4);
+
+	}
+	
+	static void displayPendetails (LinkedList<Marker> m) {
+		Iterator<Marker> it = m.iterator();
+			while(it.hasNext()) {
+			Marker lp = it.next();
+			System.out.println("Price is " +lp.price);
+			System.out.println("Brand is " +lp.color);
+		}
+}
+}

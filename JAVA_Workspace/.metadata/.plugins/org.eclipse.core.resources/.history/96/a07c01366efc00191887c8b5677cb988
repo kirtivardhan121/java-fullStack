@@ -1,0 +1,14 @@
+package com.ustglobal.lambdaexpression;
+
+public class MsgTest {
+
+	public static void main(String[] args) {
+
+		MsgInterface msg = (message) -> {
+			String msg1 = msg.greet("Hello");
+			System.out.println(msg1);
+		}
+		
+	}
+
+}

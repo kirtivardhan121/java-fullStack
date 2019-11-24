@@ -1,0 +1,12 @@
+package com.ustglobal.collectionframework.list;
+
+import java.util.ArrayList;
+
+public class TestK {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Student> al = new ArrayList<Student>();
+		
+	}
+}

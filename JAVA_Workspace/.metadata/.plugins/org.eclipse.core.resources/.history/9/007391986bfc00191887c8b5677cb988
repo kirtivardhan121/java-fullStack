@@ -1,0 +1,6 @@
+package com.ustglobal.lambdaexpression;
+
+public interface AddInterface {
+
+	void add(int a , int b);
+}

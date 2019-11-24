@@ -1,0 +1,23 @@
+package com.ustglobal.movieapp;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+public class UpdateMovie {
+
+	public static void main(String[] args) {
+		
+		EntityTransaction entityTransaction = null;
+		EntityManager entityManager = null;
+		
+		try {
+			
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		
+		}//end of try-catch
+		
+	}//end of main()
+
+}//end of UpdateMovie

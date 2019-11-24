@@ -1,0 +1,20 @@
+package com.ustglobal.customized.checkedexception;
+
+public class TestAmountt {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Main Started");
+		
+		ValidateAmouunt va = new ValidateAmouunt();
+		
+		try {
+			va.checkAmount(20000);
+		
+		} catch (InvalidAmountException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("ain Ended");
+	}
+}

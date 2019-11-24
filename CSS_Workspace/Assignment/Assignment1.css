@@ -1,0 +1,217 @@
+input{
+    width: 700px;
+    padding: 15px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+#grad{
+    background-image: url(/image/kirti.jpg);
+    height: 550px;
+    width: none;
+}
+
+
+#key{
+    font-family: cursive;
+    font-size: 30px;
+    margin-right: 40px;
+
+}
+
+nav, header, footer{
+    display: block;
+}
+body{
+    line-height: 1;
+    margin: 0;
+}
+
+nav{
+    width: 100%;
+    margin: 0;
+}
+
+nav ul{
+    background-color: blue;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    
+}
+
+ul.topnav li{
+    list-style: none;
+    float: left;
+}
+
+ul.topnav li.topnav-right{
+    float: right;
+}
+
+ul.topnav li a{
+    display: block;
+    text-decoration: none;
+    min-height: 16px;
+    padding: 14px;
+    text-transform: uppercase;
+    color: azure;
+    
+}
+
+
+ul.topnav li.dropdownIcon{
+    display: none;
+}
+
+@media screen and(max-width: 680px){
+    ul.topnav li{
+        display: none;
+    }
+}
+
+#hero{
+    background: linear-gradient();
+    position: relative;
+    background-position: centr;
+    background-size: cover;
+    background-color: #555;
+    margin: 0 0 20px;
+    text-align: center;
+    transition: .8s;
+}
+h1, h3{
+    text-align: center;
+
+}
+
+input[type="search"]{
+    width: 700px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 15px;
+
+}
+
+input[type="search"]:focus {
+    outline: none;
+}
+figure{
+    margin-left: 80px;
+}
+img{   
+    width: 320px;
+    height: 250px;
+    /* border: 1px solid brown; */
+    padding: 5px;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+    /* box-shadow: 0 0 15px red; */
+    /* transition: all 1.5s; */
+}
+
+/* img:hover{
+    cursor: pointer;
+    transform: scale(1.2, 1.2);
+} */
+
+h1{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 200px;
+    
+}
+
+#pq{
+    margin-left: 350px;
+    height: 100px;
+    width: 300px;
+    background-image: url(/image/Google.jpg);
+    background-size: cover;
+}
+
+#pqr{
+    margin-left: 300px;
+    height: 100px;
+    width: 300px;
+    background-image: url(/image/images1.png);
+    background-size: cover;
+}
+
+#btn{
+    width: 230px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgb(72, 179, 77);
+    color: aliceblue;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 10px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  #grad2{
+      width: 100%;
+      height: 100px;
+      background-color: rgb(143, 138, 138)
+  }
+  .bottomnav{
+      overflow: hidden;
+      font-weight: bold;
+
+  }
+  #key4{
+      float: right;
+  }
+  hr{
+      margin-top: 100px;
+      border: 1px solid black;
+  }
+
+  .bottomnav a{
+      float : left;
+      color: whitesmoke;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 20px;
+
+  }
+
+  #button2{
+      text-align: center;
+      margin-left: 670px;
+      background-color: chartreuse;
+      height: 40px;
+      width: 200px;
+      border-radius: 20px;
+  }
+  #h1{
+      font-size: 40px;
+      margin-top: 50px;
+  }

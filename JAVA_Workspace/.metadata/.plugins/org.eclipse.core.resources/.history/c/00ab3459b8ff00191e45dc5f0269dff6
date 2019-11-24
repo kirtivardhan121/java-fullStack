@@ -1,0 +1,13 @@
+package com.ustglobal.java8.predicate;
+
+import java.util.function.Supplier;
+
+import com.ustglobal.java8features.Student;
+
+public class TestE {
+
+	public static void main(String[] args) {
+		
+		Supplier<Student> s = () -> new Student(2, "Ajay", 68.8);
+	}
+}

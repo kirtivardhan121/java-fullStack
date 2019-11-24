@@ -1,0 +1,17 @@
+package com.ustglobal.arrays;
+
+public class TestC {
+
+	public static void main(String[] args) {
+		
+		int[] num = {10,20,30,40};
+		System.out.println(num[2]);
+//		System.out.println(num[10]);  ArrayOutOfBoundsException
+		
+		receive(num);
+	}
+	
+	static void receive(int[] numbers) {
+		
+	}
+}

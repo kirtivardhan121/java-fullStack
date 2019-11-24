@@ -1,0 +1,5 @@
+package com.ustglobal.singletonclass;
+
+public class MySingleton {
+
+}

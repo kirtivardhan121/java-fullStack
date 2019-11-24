@@ -1,0 +1,33 @@
+package com.ustglobal.sorting.set;
+
+import java.util.Iterator;
+import java.util.TreeSet;
+
+public class TestE {
+
+	public static void main(String[] args) {
+
+		TreeSet ts = new TreeSet<>();
+		ts.add(33.9);
+		ts.add(6.0);
+		ts.add(38.90);
+		ts.add(20.8);
+		//		ts.add(null); NullPointerException
+		//		ts.add("Nisha"); ClassCastException
+		//		Null are not allowed only Generics are allowed
+
+		System.out.println("********** Using for each ***********");
+
+		for(Object s : ts) {
+			System.out.println(s);
+		}
+
+		System.out.println("********** Using Iterator ***********");
+
+		Iterator it = ts.iterator();
+		while(it.hasNext()) {
+			Object p = it.next();
+			System.out.println(p);
+		}
+	}
+}

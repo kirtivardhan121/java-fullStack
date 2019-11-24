@@ -1,0 +1,40 @@
+package com.ustglobal.sorting.list;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class TestB {
+
+	public static void main(String[] args) {
+
+		LinkedList<Laptop> ll = new LinkedList<>();
+		Laptop lp1 = new Laptop(25000, 4, "HP");
+		Laptop lp2 = new Laptop(55555, 2, "Lenovo");
+		Laptop lp3 = new Laptop(67000, 16, "Acer");
+		Laptop lp4 = new Laptop(125000, 8, "Dell");
+
+
+		ll.add(lp1);
+		ll.add(lp2);
+		ll.add(lp3);
+		ll.add(lp4);
+
+		System.out.println("Before Sorting");
+		displayLaptopdetails(ll);
+		Collections.sort(ll);
+		System.out.println("<-------------After Sorting ---------------->");
+		displayLaptopdetails(ll);
+
+	}
+
+	static void displayLaptopdetails (LinkedList<Laptop> l) {
+		Iterator<Laptop> it = l.iterator();
+		while(it.hasNext()) {
+			Laptop lp = it.next();
+			System.out.println("Brand is " +lp.name);
+			System.out.println("Price is " +lp.price);
+			System.out.println("RAM is " +lp.ram);
+		}
+	}
+}

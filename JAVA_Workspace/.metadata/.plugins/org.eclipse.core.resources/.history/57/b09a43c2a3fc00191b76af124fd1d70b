@@ -1,0 +1,18 @@
+package com.ustglobal.collectionframework.list;
+
+import java.util.Vector;
+
+public class TestH {
+
+	public static void main(String[] args) {
+
+		
+		Vector v1 = new Vector();
+		v1.add(12);
+		v1.add(34.5);
+		v1.add("Nisha");
+		v1.add(true);
+		v1.add(null);
+	}
+
+}

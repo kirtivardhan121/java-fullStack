@@ -1,0 +1,11 @@
+package com.ustglobal.singletonclass;
+
+public class SingletonTest {
+
+	public static void main(String[] args) {
+
+		MySingleton ms = MySingleton.getDbConnection();
+		
+	}
+
+}

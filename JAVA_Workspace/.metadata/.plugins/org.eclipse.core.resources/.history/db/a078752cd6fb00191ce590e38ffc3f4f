@@ -1,0 +1,14 @@
+package com.ustglobal.customized.checkedexception;
+
+public class TestAmountt {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Main Started");
+		
+		ValidateAmouunt va = new ValidateAmouunt();
+		va.checkAmount(20000);
+		
+		System.out.println("ain Ended");
+	}
+}

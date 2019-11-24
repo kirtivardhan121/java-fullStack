@@ -1,0 +1,31 @@
+package com.ustglobal.collectionframework.list;
+
+import java.util.ArrayList;
+
+public class EmpTest {
+
+	public static void main(String[] args) {
+
+		ArrayList<Employee> al = new ArrayList<Employee>();
+		
+		Employee e1 = new Employee(101, "Kirtivardhan" , 5400000);
+		Employee e2 = new Employee(102, "Rajvardhan" , 5400000);
+		Employee e3 = new Employee(103, "Harshvardhan" , 5400000);
+		Employee e4 = new Employee(104, "Yashvardhan" , 5400000);
+		Employee e5 = new Employee(105, "Shewtvardhan" , 5400000);
+		
+		al.add(e1);
+		al.add(e2);
+		al.add(e3);
+		al.add(e4);
+		al.add(e5);
+		
+		for(int i = 0 ; i< al.size() ; i++) {
+			Employee s = al.get(i);
+			System.out.println("Id is " +s.id);
+			System.out.println("Name is " +s.name);
+			System.out.println("Salary is " +s.salary);
+		}
+	}
+
+}

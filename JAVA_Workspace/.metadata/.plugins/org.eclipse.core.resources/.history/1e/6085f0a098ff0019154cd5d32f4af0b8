@@ -1,0 +1,17 @@
+package com.ustglobal.maps;
+
+import java.util.TreeMap;
+
+public class TestE {
+
+	public static void main(String[] args) {
+		
+
+		TreeMap<String, Integer> lh = new TreeMap<>();
+		lh.put("Bangalore", 560068);
+		lh.put("Pune", 451076);
+		lh.put("Mumbai", 467844);
+		
+		System.out.println(lh);
+	}
+}

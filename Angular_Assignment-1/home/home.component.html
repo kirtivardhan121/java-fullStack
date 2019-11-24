@@ -1,0 +1,51 @@
+<div class="col-md-3 float-left">
+    <h5 class="text-center">Entertainment News</h5>
+    <div *ngIf="entertainmentArticles">
+        <div *ngFor="let article of entertainmentArticles">
+                <div class="col-md-12">
+                        <img class="card-img-top" src="{{article.urlToImage}}">
+                        
+          
+                        <p>
+                          {{article.description}}
+                        </p>
+                         
+            </div>
+            
+          </div>
+    </div>
+</div>
+<div class="col-md-6 float-left">
+    <h3 class="text-center">Top News from India</h3>
+    <div *ngIf="topArticles">
+            <div *ngFor="let article of topArticles">
+                    <div class="col-md-12">
+                            <img class="card-img-top" src="{{article.urlToImage}}">
+                            
+              
+                            <p>
+                              {{article.description}}
+                            </p>
+                             
+                </div>
+                
+              </div>
+        </div>
+</div>  
+<div class="col-md-3 float-left">
+    <h5 class="text-center">Sports News</h5>
+    <div *ngIf="sportsArticles">
+            <div *ngFor="let article of sportsArticles">
+                    <div class="col-md-12">
+                            <img class="card-img-top" src="{{article.urlToImage}}">
+                            
+              
+                            <p>
+                              {{article.description}}
+                            </p>
+                             
+                </div>
+                
+              </div>
+        </div>
+</div>

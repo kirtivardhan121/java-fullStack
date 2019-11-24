@@ -1,0 +1,26 @@
+package com.ustglobal.movieapp;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+import com.ustglobal.movieapp.dto.Movie;
+
+public class InsertDemo {
+
+	public static void main(String[] args) {
+		
+		Movie movie = new Movie();
+		movie.setMid(1);
+		movie.setMname("Avengers");
+		movie.setDuration(2);
+		
+		EntityTransaction entityTransaction = null;
+		EntityManager entityManager = null;
+		
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

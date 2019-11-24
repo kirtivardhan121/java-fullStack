@@ -1,0 +1,7 @@
+package com.ustglobal.objectclass;
+
+public class TestA {
+
+	PenDrive p = new PenDrive();
+	
+}
