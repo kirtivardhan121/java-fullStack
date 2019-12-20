@@ -1,0 +1,35 @@
+<div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+<div class="col-md-4 offset-md-4 mt-5">
+    <form #loginForm='ngForm' (ngSubmit)='login(loginForm)'>
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <div class="card-title text-center">
+                    <h4> Librarian Login Form</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <input type="text" name="libid" id="libid" placeholder="Enter your id" #libid='ngModel' ngModel
+                    class="form-control mb-3"  pattern="[0-9]{1,5}" required>
+                    <div *ngIf="libid.touched && libid.invalid">
+                        <p class="alert alert-danger" *ngIf="libid.errors.required">This is required field</p>
+                        <p class="alert alert-danger" *ngIf="libid.errors.pattern">Enter only number</p>
+                        <p class="alert alert-danger" *ngIf="libid.errors.maxlength">Length should not be greater than 5</p>
+                    </div>
+                <input type="password" name="password" id="password" placeholder="Enter Password" #password='ngModel'
+                    ngModel required class="form-control mb-3" maxlength="20" minlength="8"
+                     pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}">
+                    <div *ngIf="password.touched && password.invalid">
+                        <p class="alert alert-danger" *ngIf="password.errors.required">This is required field</p>
+                        <p *ngIf="password.errors.minlength" class="alert alert-danger">Character must be greater than 8</p>
+                        <p *ngIf="password.errors.pattern" class="text-danger">*password must contain atleast one
+                            uppercase one lowercase and a number</p>
+                    </div>
+            </div>
+            <div class="card-footer">
+                <button class="float-right btn btn-dark" type="submit" [disabled]="loginForm.invalid">
+                    Login
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,7 @@
+.footer-copyright.text-center.py-3 {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    margin-top: 22em;
+    margin-left: 39rem;
+}

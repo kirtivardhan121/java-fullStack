@@ -1,0 +1,29 @@
+<div class="col-md-4 offset-md-4 mt-5 card">
+    <div class="card-header bg-dark text-white">
+        <div class="card-title text-center">
+            <h4> All Books </h4>
+        </div>
+    </div>
+    <div class="card-body">
+        <div *ngIf='books'>
+            <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Book ID</th>
+                            <th>Book Name</th>
+                            <th>Book Author</th>
+                            <th>publication</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let book of books">
+                            <td>{{book.bid}}</td>
+                            <td>{{book.bname}}</td>
+                            <td>{{book.bauthor}}</td>
+                            <td>{{book.publication}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,25 @@
+<div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+<div class="col-md-4 offset-md-4 mt-5">
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            <div class="card-title text-center">
+                <h4> Update Book </h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <form #updateForm='ngForm' (ngSubmit)='updateBook(updateForm)'>
+                <input type="number" name="bid" id="bid" #bid='ngModel' ngModel class="form-control mb-3"
+                    placeholder="Enter Book id">
+                <input type="text" name="bname" id="bname" #bname='ngModel' ngModel class="form-control mb-3"
+                    placeholder="Enter Book Name">
+                <input type="text" name="bauthor" id="bauthor" #bauthor='ngModel' ngModel class="form-control mb-3"
+                    placeholder="Enter Author Name">
+                <input type="text" name="publication" id="publication" #publication='ngModel' ngModel
+                    class="form-control mb-3" placeholder="Enter Publication Name">
+
+                <div class="card-footer">
+                    <button type="submit" class="float-right btn btn-dark">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>

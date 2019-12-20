@@ -1,0 +1,69 @@
+<div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+<div class="col-md-4 offset-md-4 mt-5">
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            <div class="card-title text-center">
+                <h4> Student Registeration Form</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <form #registerForm='ngForm' (ngSubmit)='register(registerForm)'>
+                <div class="form-group">
+                    <input type="text" name="rollno" id="rollno" #rollno='ngModel' ngModel class="form-control mb-3"
+                        placeholder="Enter Your RollNo..." pattern="[0-9]{1,5}" required>
+                    <div *ngIf="rollno.touched && rollno.invalid">
+                        <p class="alert alert-danger" *ngIf="rollno.errors.required">This is required field</p>
+                        <p class="alert alert-danger" *ngIf="rollno.errors.pattern">Enter only number and number should
+                            be 5 digit only</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="name" id="name" #name='ngModel' ngModel class="form-control mb-3"
+                        placeholder="Enter Name..." minlength="3" maxlength="25"
+                        pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" required>
+                    <div *ngIf=" name.touched && name.invalid">
+                        <p class="alert alert-danger" *ngIf="name.errors.required">This is required field</p>
+                        <p class="alert alert-danger" *ngIf="name.errors.pattern">Enter only alphabet</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" id="password" #password='ngModel' ngModel
+                        class="form-control mb-3" placeholder="Enter password..." maxlength="20" minlength="8"
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" required>
+                    <div *ngIf="password.touched && password.invalid">
+                        <p class="alert alert-danger" *ngIf="password.errors.required">This is required field</p>
+                        <p class="alert alert-danger" *ngIf="password.errors.pattern">Password must contain atleast one
+                            capital letter, small letter, and number.
+                        </p>
+                        <p *ngIf="password.errors.minlength" class="alert alert-danger">Character must be greater than 8
+                        </p>
+                        <p *ngIf="password.errors.maxlength" class="alert alert-danger">Character should not be greater
+                            than 20</p>
+
+                    </div>
+                </div>
+                <div class="form group">
+                    <input type="text" name="department" id="department" #department='ngModel' ngModel
+                        class="form-control mb-3" placeholder="Enter Your Department..."
+                        pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" required>
+                    <div *ngIf="department.touched && department.invalid">
+                        <p class="alert alert-danger" *ngIf="department.errors.required">This is required field</p>
+                        <p class="alert alert-danger" *ngIf="department.errors.pattern">Enter only alphabet</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="gender" id="gender" #gender='ngModel' ngModel class="form-control mb-3"
+                        placeholder="Enter Gender..." pattern="[M;F;O;m;f;o]" maxlength="1" required>
+                    <div *ngIf="gender.touched && gender.invalid">
+                        <p class="alert alert-danger" *ngIf="gender.errors.required">This is required field</p>
+                        <p *ngIf="gender.errors.pattern" class="text-danger">*Enter F for female, M For Male,O for
+                            Others
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="float-right btn btn-outline-dark">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
