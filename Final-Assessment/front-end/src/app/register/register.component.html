@@ -1,0 +1,45 @@
+<div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+<div class="col-md-4 offset-md-4 mt-5">
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            <div class="card-title text-center">
+                <h4>Registeration</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <form #registerForm='ngForm' (ngSubmit)='register(registerForm)'>
+                <div class="form-group">
+                    <input type="number" name="id" id="id" #id='ngModel' ngModel class="form-control mb-3"
+                        placeholder="Enter Your Id..." pattern="[0-9]{1,5}" required>
+                    <div *ngIf="id.touched && id.invalid">
+                        <p class="text-danger" *ngIf="id.errors.required">This is required field</p>
+                        <p class="text-danger" *ngIf="id.errors.pattern">Enter only number</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="name" id="name" #name='ngModel' ngModel class="form-control mb-3"
+                        placeholder="Enter Your Name..." minlength="3" maxlength="25"
+                        pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" required>
+                    <div *ngIf="name.touched && name.invalid">
+                        <p class="text-danger" *ngIf="name.errors.required">This is required field</p>
+                        <p class="text-danger" *ngIf="name.errors.pattern">Enter only alphabet</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" id="password" #password='ngModel' ngModel
+                        class="form-control mb-3" placeholder="Enter password..." maxlength="20" minlength="8"
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" required>
+                    <div *ngIf="password.touched && password.invalid">
+                        <p *ngIf="password.errors.required" class="text-danger">*this field is required</p>
+                        <p *ngIf="password.errors.unique" class="text-danger">*enter valid password</p>
+                        <p *ngIf="password.errors.minlength" class="text-danger">*password length is short</p>
+                        <p *ngIf="password.errors.pattern" class="text-danger">*password must contain atleast one
+                            uppercase one lowercase and a number</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="float-right btn btn-outline-dark">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
